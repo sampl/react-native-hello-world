@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, Image, View, StyleSheet } from 'react-native'
 
-export default class Animal extends Component {
+export default class AnimalListItem extends Component {
   render() {
     return(
       <View style={styles.card}>
