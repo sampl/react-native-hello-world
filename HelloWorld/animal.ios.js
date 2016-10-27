@@ -15,9 +15,13 @@ export default class Animal extends Component {
 const styles = StyleSheet.create({
   card: {
     alignItems: 'center',
+    backgroundColor: 'white',
+    height: 240,
+    padding: 10,
+    margin: 10,
   },
   pic: {
-    width: 340,
-    height: 220,
+    width: 300,
+    height: 200,
   },
 })
