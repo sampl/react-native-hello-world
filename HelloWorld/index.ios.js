@@ -1,20 +1,12 @@
 import React, { Component } from 'react'
-import { AppRegistry, Text, Image, View } from 'react-native'
+import { AppRegistry, Text, Image, View, StyleSheet } from 'react-native'
 
 class HelloWorld extends Component {
   render() {
-
-    let slothPic = {
-      uri: 'https://i.imgur.com/UH59bBo.jpg'
-    }
-    let bearPic = {
-      uri: 'https://s-media-cache-ak0.pinimg.com/564x/3c/4b/90/3c4b9031ed852ea25f587e34c34a9569.jpg'
-    }
-
     return (
       <View>
-        <Animal caption="hello darlinggg" pic={slothPic} />
-        <Animal caption="here we gooo" pic={bearPic} />
+        <Animal caption="hello darlin" pic={{uri: 'https://i.imgur.com/UH59bBo.jpg'}} />
+        <Animal caption="here we go" pic={{uri: 'https://s-media-cache-ak0.pinimg.com/564x/3c/4b/90/3c4b9031ed852ea25f587e34c34a9569.jpg'}} />
       </View>
     )
   }
@@ -22,19 +14,23 @@ class HelloWorld extends Component {
 
 class Animal extends Component {
   render() {
-    let viewStyle = {
-      alignItems: 'center',
-    }
-    let picStyle = {
-      width: 320,
-      height: 200,
-    }
     return(
-      <View style={viewStyle}>
-        <Image source={this.props.pic} style={picStyle}/>
+      <View style={styles.card}>
+        <Image source={this.props.pic} style={styles.pic}/>
         <Text>{this.props.caption}</Text>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  card: {
+    alignItems: 'center',
+  },
+  pic: {
+    width: 340,
+    height: 220,
+  },
+})
+
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld)
