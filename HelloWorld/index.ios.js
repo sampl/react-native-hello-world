@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { AppRegistry, Text, Image, View, StyleSheet } from 'react-native'
+import { AppRegistry, View, StyleSheet } from 'react-native'
+
+// components
+import Animal from './animal.ios.js'
 
 class HelloWorld extends Component {
   render() {
@@ -11,26 +14,5 @@ class HelloWorld extends Component {
     )
   }
 }
-
-class Animal extends Component {
-  render() {
-    return(
-      <View style={styles.card}>
-        <Image source={this.props.pic} style={styles.pic}/>
-        <Text>{this.props.caption}</Text>
-      </View>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  card: {
-    alignItems: 'center',
-  },
-  pic: {
-    width: 340,
-    height: 220,
-  },
-})
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld)
